@@ -31,13 +31,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -47,17 +43,33 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text('InkWell Widget'),
         ),
         body: Center(
+            child: InkWell(
+          onTap: () {
+            print('tapped on container');
+          },
+          onDoubleTap: () {
+            print('double tap on container');
+          },
+          onLongPress: () {
+            print('long pressed on container');
+          },
           child: Container(
-            height: 200,
             width: 200,
+            height: 200,
             color: Colors.amber,
-            child: ElevatedButton(
-              child: Text('click me'),
-              onPressed: () {
-                print('clicked on button');
-              },
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  print('click on text');
+                },
+                child: Text(
+                  'Click me',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+              ),
             ),
           ),
-        ));
+        )));
+        
   }
 }
