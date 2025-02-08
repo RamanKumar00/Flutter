@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
         
         title: Text('Row_Column'),
       ),
-      body:Container(
+      body:SizedBox(
         height: 300,
         width: 300,
 
